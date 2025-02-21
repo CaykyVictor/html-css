@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    height: 100vh;
+    background: linear-gradient(45deg, #120A8F, #000000, #1B0036);
+    background-size: 300% 300%;
+    animation: nebulosa 10s infinite alternate ease-in-out;
+}
+
+.scene img {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes nebulosa {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
