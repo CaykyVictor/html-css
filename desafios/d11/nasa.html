@@ -6,59 +6,17 @@
     <title>Astronauta no Espaço</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: black;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-image: url(imagens/espaco.jpg);
         }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        div.imagem {
+            background-image: url(imagens/astronauta.png);
         }
     </style>
 </head>
 <body>
-    <canvas id="space"></canvas>
+    <div class="imagem">
 
-    <script>
-        const canvas = document.getElementById("space");
-        const ctx = canvas.getContext("2d");
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const stars = [];
-        for (let i = 0; i < 100; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 2,
-                speed: Math.random() * 0.5
-            });
-        }
-
-        function drawStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
-
-            stars.forEach(star => {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fill();
-                star.y += star.speed;
-                if (star.y > canvas.height) star.y = 0;
-            });
-
-            requestAnimationFrame(drawStars);
-        }
-
-        drawStars();
-    </script>
-    <img src="imagens/astronauta.png" alt="">
+    </div>
 </body>
 </html>
